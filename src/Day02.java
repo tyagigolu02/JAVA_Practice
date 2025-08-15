@@ -1,4 +1,3 @@
-import java.util.Scanner;
 
 public class Day02 {
     void trianglePatt(){
@@ -105,6 +104,6 @@ public class Day02 {
 //        obj.pyramidPatt();
 //        obj.numPatt();
 //        obj.newNumPatt();
-        obj.holNumPatt();
+//        obj.holNumPatt();
     }
 }
