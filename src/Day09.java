@@ -62,6 +62,25 @@ public class Day09 {
         }
         printArray(arr1);
     }
+    static void pascalTri(int [][] arr1){
+        for(int i =0;i<arr1.length;i++){
+            for(int j=0;j< arr1[i].length;j++){
+                System.out.println(arr1[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+    static int [][] pascal(int n){
+        int [][] ans = new int [n][];
+        for(int i=0;i<n;i++){
+            ans[i] = new int[i+1];
+            ans[i][0] = ans [i][i] = 1;
+            for(int j=1;j<i;j++){
+                ans[i][j] = ans[i-1][j] + ans[i-1][j-1];
+            }
+        }
+        return ans;
+    }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 //        System.out.print("Enter the number of rows : ");
@@ -122,7 +141,11 @@ public class Day09 {
 //        mul(arr1,2,2,arr2,2,2);
 //        int [][] ans = transpose(arr1,2,2);
 //        printArray(ans);
-        transpose(arr1,2,2);
+//        transpose(arr1,2,2);
+        System.out.println("Enter n : ");
+        int n = sc.nextInt();
+        int [][] ans = pascal(n);
+        printArray(ans);
 
     }
 }
