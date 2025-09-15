@@ -98,6 +98,50 @@ public class Basics {
         return ans;
     }
 
+    static void mostFreqCharSorting(String s1){ // use sorting --sliding window
+        char [] ch1 = s1.toCharArray();
+        Arrays.sort(ch1);
+
+        int n = s1.length();
+        int maxFreq = -1;
+        char ans = s1.charAt(0);
+
+        int i =0, j=0;
+        while(j<n){
+            if(ch1[i] == ch1[j]){
+                j++;
+            }
+            else{
+                int freq = j-i;
+                if(freq > maxFreq){
+                    maxFreq = freq;
+                    ans = ch1[i];
+                }
+                i = j;
+            }
+        }
+        int freq = j-i;
+        if(freq > maxFreq){
+            maxFreq = freq;
+            ans = ch1[i];
+        }
+    }
+
+
+    static boolean palindrome(String s){
+        int j = s.length()-1;
+        int i = 0;
+
+        while(i<j){
+            if(s.charAt(i) != s.charAt(j)) return false;
+            i++;
+            j--;
+        }
+        return true;
+    }
+
+    
+
 
 
     public static void main(String[] args) {
@@ -112,8 +156,12 @@ public class Basics {
 //        reverse();
         String s1 = "anagram";
         String s2 = "nagaram";
+        String str = "markram";
 //        change(s);
 //        System.out.println(areAnagram(s1,s2));
-        System.out.println("Most Freq Char " + mostFreqChar(s1));
+//        System.out.println("Most Freq Char " + mostFreqChar(s1));
+//        System.out.println(palindrome(str));
+
+        mostFreqCharSorting(s1);
     }
 }
