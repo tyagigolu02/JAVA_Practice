@@ -31,6 +31,8 @@ public class ArrayList01 {
         System.out.println(cars.subList(2,3));
 
     }
+
+
     static void main(String[] args) {
         ArrayList01 obj = new ArrayList01();
         obj.arrayList();
